@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>PlantCare</title>
+
+<link
+rel="stylesheet"
+href="/css/style.css"
+>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌱 PlantCare</h1>
+
+<a
+href="/logout"
+class="logout"
+>
+
+Sair
+
+</a>
+
+</header>
+
+<div class="container">
+
+<% if(plants.length === 0){ %>
+
+<p>
+
+Nenhuma planta cadastrada.
+
+</p>
+
+<% } %>
+<a class="btn" href="/plants/search">
+    🔎 Buscar Planta na API
+</a>
+
+<br><br>
+<% plants.forEach(plant => { %>
+
+<div class="card">
+
+<h2>
+
+<a href="/plants/<%= plant._id %>">
+
+🌿 <%= plant.apelido %>
+
+</a>
+
+</h2>
+
+<p>
+
+<%= plant.especie %>
+
+</p>
+
+</div>
+
+<% }) %>
+
+</div>
+
+<a href="/plants/new">
+
+<button class="add-btn">
+
++
+
+</button>
+
+</a>
+
+</body>
+
+</html>

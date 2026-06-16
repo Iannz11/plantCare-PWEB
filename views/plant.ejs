@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title><%= plant.apelido %></title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌱 Detalhes da Planta</h1>
+
+    <a
+        href="/dashboard"
+        class="logout"
+    >
+        Voltar
+    </a>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>
+            🌿 <%= plant.apelido %>
+        </h2>
+
+        <br>
+
+        <p>
+            <strong>Espécie:</strong>
+            <%= plant.especie %>
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Descrição:</strong>
+            <%= plant.descricao || "Sem descrição" %>
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Data de Plantio:</strong>
+
+            <%= plant.dataPlantio
+                ? plant.dataPlantio.toLocaleDateString("pt-BR")
+                : "Não informada"
+            %>
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Última Rega:</strong>
+
+            <%= plant.ultimaRega
+                ? plant.ultimaRega.toLocaleDateString("pt-BR")
+                : "Não informada"
+            %>
+        </p>
+
+        <br><br>
+
+        <a
+            href="/plants/edit/<%= plant._id %>"
+            class="btn"
+        >
+            ✏️ Editar
+        </a>
+
+        <a
+            href="/plants/delete/<%= plant._id %>"
+            class="btn"
+            onclick="return confirm('Deseja excluir esta planta?')"
+        >
+            🗑️ Excluir
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

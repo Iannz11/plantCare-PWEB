@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova Planta</title>
+</head>
+<body>
+
+<h1>Adicionar Planta</h1>
+
+<form action="/plants/new" method="POST">
+
+    <input
+        type="text"
+        name="apelido"
+        placeholder="Apelido"
+        required
+    >
+
+    <br><br>
+
+    <input
+        type="text"
+        name="especie"
+        placeholder="Espécie"
+        required
+    >
+
+    <br><br>
+
+    <textarea
+        name="descricao"
+        placeholder="Descrição"
+    ></textarea>
+
+    <br><br>
+
+    <label>Data de Plantio</label>
+
+    <input
+        type="date"
+        name="dataPlantio"
+    >
+
+    <br><br>
+
+    <label>Última Rega</label>
+
+    <input
+        type="date"
+        name="ultimaRega"
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Salvar Planta
+    </button>
+
+</form>
+
+</body>
+</html>

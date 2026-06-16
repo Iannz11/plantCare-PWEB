@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Planta</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>🔎 Buscar Planta</h1>
+</header>
+
+<div class="form-card">
+
+<form action="/api/planta" method="GET">
+
+    <input
+        class="input"
+        type="text"
+        name="nome"
+        placeholder="Digite o nome da planta"
+        required
+    >
+
+    <button class="btn" type="submit">
+        Buscar
+    </button>
+
+</form>
+
+<br>
+
+<% if(result){ %>
+
+<div class="card">
+
+    <h2>
+        <%= result.common_name || "Sem nome comum" %>
+    </h2>
+
+    <p>
+
+    Nome científico:
+
+    <%= result.scientific_name ?
+        result.scientific_name[0]
+        : "Não encontrado"
+    %>
+
+    </p>
+
+</div>
+
+<% } %>
+
+<br>
+
+<a class="btn" href="/plants/new">
+Cadastrar Planta
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Planta</title>
+</head>
+<body>
+
+<h1>Editar Planta</h1>
+
+<form
+action="/plants/edit/<%= plant._id %>"
+method="POST"
+>
+
+<input
+type="text"
+name="apelido"
+value="<%= plant.apelido %>"
+required
+>
+
+<br><br>
+
+<input
+type="text"
+name="especie"
+value="<%= plant.especie %>"
+required
+>
+
+<br><br>
+
+<textarea
+name="descricao"
+><%= plant.descricao %></textarea>
+
+<br><br>
+
+<input
+type="date"
+name="dataPlantio"
+value="<%= plant.dataPlantio ?
+plant.dataPlantio.toISOString().split('T')[0]
+: '' %>"
+>
+
+<br><br>
+
+<input
+type="date"
+name="ultimaRega"
+value="<%= plant.ultimaRega ?
+plant.ultimaRega.toISOString().split('T')[0]
+: '' %>"
+>
+
+<br><br>
+
+<button type="submit">
+Salvar Alterações
+</button>
+
+</form>
+
+</body>
+</html>
