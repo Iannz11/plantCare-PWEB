@@ -1,66 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <title>Editar Planta</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
 </head>
+
 <body>
 
-<h1>Editar Planta</h1>
+<header>
 
-<form
-action="/plants/edit/<%= plant._id %>"
-method="POST"
->
+    <h1>✏️ Editar Planta</h1>
 
-<input
-type="text"
-name="apelido"
-value="<%= plant.apelido %>"
-required
->
+    <a
+        href="/plants/<%= plant._id %>"
+        class="logout"
+    >
+        Voltar
+    </a>
 
-<br><br>
+</header>
 
-<input
-type="text"
-name="especie"
-value="<%= plant.especie %>"
-required
->
+<div class="form-card">
 
-<br><br>
+    <form
+        action="/plants/edit/<%= plant._id %>"
+        method="POST"
+    >
 
-<textarea
-name="descricao"
-><%= plant.descricao %></textarea>
+        <input
+            class="input"
+            type="text"
+            name="apelido"
+            value="<%= plant.apelido %>"
+            required
+        >
 
-<br><br>
+        <input
+            class="input"
+            type="text"
+            name="especie"
+            value="<%= plant.especie %>"
+            required
+        >
 
-<input
-type="date"
-name="dataPlantio"
-value="<%= plant.dataPlantio ?
-plant.dataPlantio.toISOString().split('T')[0]
-: '' %>"
->
+        <textarea
+            class="input"
+            name="descricao"
+            rows="4"
+        ><%= plant.descricao %></textarea>
 
-<br><br>
+        <label>
+            Data de Plantio
+        </label>
 
-<input
-type="date"
-name="ultimaRega"
-value="<%= plant.ultimaRega ?
-plant.ultimaRega.toISOString().split('T')[0]
-: '' %>"
->
+        <input
+            class="input"
+            type="date"
+            name="dataPlantio"
+            value="<%= plant.dataPlantio ? plant.dataPlantio.toISOString().split('T')[0] : '' %>"
+        >
 
-<br><br>
+        <label>
+            Última Rega
+        </label>
 
-<button type="submit">
-Salvar Alterações
-</button>
+        <input
+            class="input"
+            type="date"
+            name="ultimaRega"
+            value="<%= plant.ultimaRega ? plant.ultimaRega.toISOString().split('T')[0] : '' %>"
+        >
 
-</form>
+        <button
+            class="btn"
+            type="submit"
+        >
+            💾 Salvar Alterações
+        </button>
+
+    </form>
+
+</div>
 
 </body>
+
 </html>
