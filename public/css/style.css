@@ -132,3 +132,33 @@ header{
     text-decoration:none;
 
 }
+
+.form-card h1{
+    text-align:center;
+    color:#5c8d5c;
+}
+
+.form-card a{
+    color:#5c8d5c;
+    text-decoration:none;
+}
+
+.form-card a:hover{
+    text-decoration:underline;
+}
+
+.btn{
+    width:100%;
+    margin-top:10px;
+}
+
+textarea.input{
+    resize:none;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#2d3436;
+}

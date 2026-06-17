@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <title>Nova Planta</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
 </head>
+
 <body>
 
-<h1>Adicionar Planta</h1>
+<header>
 
-<form action="/plants/new" method="POST">
+    <h1>🌱 Nova Planta</h1>
 
-    <input
-        type="text"
-        name="apelido"
-        placeholder="Apelido"
-        required
+    <a
+        href="/dashboard"
+        class="logout"
     >
+        Voltar
+    </a>
 
-    <br><br>
+</header>
 
-    <input
-        type="text"
-        name="especie"
-        placeholder="Espécie"
-        required
-    >
+<div class="form-card">
 
-    <br><br>
+    <form action="/plants/new" method="POST">
 
-    <textarea
-        name="descricao"
-        placeholder="Descrição"
-    ></textarea>
+        <input
+            class="input"
+            type="text"
+            name="apelido"
+            placeholder="Apelido da planta"
+            required
+        >
 
-    <br><br>
+        <input
+            class="input"
+            type="text"
+            name="especie"
+            placeholder="Espécie"
+            required
+        >
 
-    <label>Data de Plantio</label>
+        <textarea
+            class="input"
+            name="descricao"
+            placeholder="Descrição"
+            rows="4"
+        ></textarea>
 
-    <input
-        type="date"
-        name="dataPlantio"
-    >
+        <label>
+            Data de Plantio
+        </label>
 
-    <br><br>
+        <input
+            class="input"
+            type="date"
+            name="dataPlantio"
+        >
 
-    <label>Última Rega</label>
+        <label>
+            Última Rega
+        </label>
 
-    <input
-        type="date"
-        name="ultimaRega"
-    >
+        <input
+            class="input"
+            type="date"
+            name="ultimaRega"
+        >
 
-    <br><br>
+        <button
+            class="btn"
+            type="submit"
+        >
+            🌿 Salvar Planta
+        </button>
 
-    <button type="submit">
-        Salvar Planta
-    </button>
+    </form>
 
-</form>
+</div>
 
 </body>
+
 </html>
